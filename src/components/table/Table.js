@@ -90,15 +90,14 @@ export class Table extends ExcelComponent {
     }
   }
 
-  updateTextInStore(event) {
+  updateTextInStore(value) {
     this.$dispatch(actions.changeText({
       id: this.selection.current.id(),
-      value: $(event.target).text()
+      value
     }))
   }
 
-
-  onInput() {
+  onInput(event) {
     this.updateTextInStore($(event.target).text())
   }
 }
